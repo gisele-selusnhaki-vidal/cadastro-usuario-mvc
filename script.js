@@ -124,7 +124,7 @@ async function cadastrarUsuario() {
     }
 
     try {
-        const res = await fetch("http://localhost:3000/api/users", {
+        const res = await fetch("http://localhost:3000/api/cliente", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -155,7 +155,7 @@ async function listarClientes() {
     if (buscaInput) buscaInput.value = "";
 
     try {
-        const res = await fetch("http://localhost:3000/clientes");
+        const res = await fetch("http://localhost:3000/api/cliente");
         const clientes = await res.json();
         renderizarClientes(clientes);
     } catch (erro) {
@@ -174,7 +174,7 @@ async function buscarClientes() {
     }
 
     try {
-        const res = await fetch("http://localhost:3000/clientes");
+        const res = await fetch("http://localhost:3000/api/cliente");
         const clientes = await res.json();
         
         // Filtrar pelo CPF ignorando caracteres não numéricos
